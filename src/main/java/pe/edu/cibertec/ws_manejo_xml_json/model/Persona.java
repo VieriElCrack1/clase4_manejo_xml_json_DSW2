@@ -1,7 +1,6 @@
 package pe.edu.cibertec.ws_manejo_xml_json.model;
 
 import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlList;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
@@ -14,10 +13,12 @@ public class Persona {
     private String apellido;
     private int edad;
     private String ciudad;
+
     /*<persona>
         <nombre>Luis</nombre>
     </persona>
      */
+
     @XmlElement
     public String getNombre() {
         return nombre;
@@ -26,6 +27,7 @@ public class Persona {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
     @XmlElement
     public String getApellido() {
         return apellido;
@@ -34,6 +36,7 @@ public class Persona {
     public void setApellido(String apellido) {
         this.apellido = apellido;
     }
+
     @XmlElement
     public int getEdad() {
         return edad;
@@ -42,6 +45,7 @@ public class Persona {
     public void setEdad(int edad) {
         this.edad = edad;
     }
+
     @XmlElement
     public String getCiudad() {
         return ciudad;

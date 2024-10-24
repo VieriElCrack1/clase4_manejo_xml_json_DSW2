@@ -14,20 +14,21 @@ import java.util.List;
 @RequiredArgsConstructor
 @Slf4j
 @SpringBootApplication
-public class WsManejoXmlJsonApplication implements
-		CommandLineRunner {
+public class WsManejoXmlJsonApplication implements CommandLineRunner {
 	private final FileService fileService;
+
 	public static void main(String[] args) {
 		SpringApplication.run(WsManejoXmlJsonApplication.class, args);
 	}
+
 	@Override
 	public void run(String... args) throws Exception {
-		Persona persona = new Persona("Luis", "Salvat",
-				28, "Lima");
+		Persona persona = new Persona("Luis", "Salvat", 28, "Lima");
 		List<Persona> personaList = new ArrayList<>();
 		personaList.add(persona);
-		//fileService.crearArchivoXML(persona);
+		fileService.crearArchivoXML(persona);
 		fileService.crearArchivoXMLList(personaList);
 		fileService.crearJson(persona);
 	}
+
 }

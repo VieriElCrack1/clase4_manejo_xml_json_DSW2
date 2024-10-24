@@ -1,6 +1,6 @@
 package pe.edu.cibertec.ws_manejo_xml_json.service;
 
-
+import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.Marshaller;
 import lombok.extern.slf4j.Slf4j;
@@ -22,7 +22,6 @@ public class FileService {
         Marshaller marshaller = context.createMarshaller();
         marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
         marshaller.marshal(persona, new File(XML_FILE_PATH));
-
     }
 
     public void crearArchivoXMLList(List<Persona> personaList) throws  Exception {
@@ -31,7 +30,6 @@ public class FileService {
         Marshaller marshaller = context.createMarshaller();
         marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
         marshaller.marshal(personas, new File(XML_FILE_PATH));
-
     }
 
     public void crearJson(Persona persona) throws Exception{
@@ -39,8 +37,6 @@ public class FileService {
         objectMapper.writerWithDefaultPrettyPrinter()
                 .writeValue(new File(JSON_FILE_PATH), persona);
     }
-
-
 
 }
 
